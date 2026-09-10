@@ -24,23 +24,28 @@ bu bilgilere bakarak sınavı geçip geçmeyeceğini tahmin edelim.
 Label:
     0 : Kaldı
     1 : Geçti
-
+    
 Kullanılan algoritma:
     Logistic Regression  
-
-
+    
+    
 Kurulum:
-    pip install numpy scikit-learn 
+    pip install numpy scikit-learn
+    python -c "import numpy; import sklearn; print('Kurulum başarılı')"
+    
+    python -m pip install -r requirements.txt
+    
+    -m → module
+    -c → command
 """
 
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 
-
 def main():
     #  X(Features/Özellikler) --> MODEL --> y (Label/Etiketler)
 
-    X = np.array([
+    x = np.array([
         [1, 30],
         [2, 40],
         [2, 50],
@@ -74,10 +79,11 @@ def main():
 
     print("=== SUPERVISED LEARNING (Features(+) Label(+))")
     print("\nX - Öğrenci Özellikler(Features)")
-    print(X)
+    print(x)
 
     print("\ny - Label(Etiketler)")
     print(y)
+
 
     # Model Oluşturma
     """
@@ -88,12 +94,12 @@ def main():
      LogisticRegression, iki veya daha fazla sınıfın hangisine ait olduğunu tahmit etmek için kullanılan sınıfın algoritmasıdır
     """
 
-    model = LogisticRegression()
+    model =LogisticRegression()
 
     # Modeli Eğitim
     # Model hem özellikleri hemde dorğu cevpları görsün
     # Bu ilişkide çalışma saati + KAtılım oranı --> Geçti/Kaldı
-    model.fit(x, y)
+    model.fit(x,y)
 
     # Instance
     # Örnek: Öğrenci 6 saat çalışıyor, Derse katılım %80
@@ -113,7 +119,7 @@ def main():
     print("\nModel tahmini:", prediction)
 
     # Conditional
-    if prediction == 1:
+    if prediction ==1:
         print("Sonuç: Öğrencinin GEÇMESİ bekleniyor")
     else:
         print("Sonuç: Öğrencinin KALMASI bekleniyor")
@@ -128,6 +134,5 @@ def main():
     print("Unutmaaaa:  Model, geçmişteki doğru cevapları öğrenir ve")
     print("Bu örnekte labek:0=Kaldı, 1=Geçti")
 
-
-if __name__ == "__main__":
+if __name__== "__main__":
     main()
