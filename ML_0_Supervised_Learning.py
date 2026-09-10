@@ -44,7 +44,8 @@ from sklearn.linear_model import LogisticRegression
 
 def main():
     #  X(Features/Özellikler) --> MODEL --> y (Label/Etiketler)
-
+    #  1= Günlük çalışma saati
+    #  30= Derse katılım yüzdesi
     x = np.array([
         [1, 30],
         [2, 40],
@@ -58,12 +59,11 @@ def main():
         [9, 95]
     ])
 
-    #  y (Label/Etiketler)
+    # y (Label/Etiketler)
     # 0 = Kaldı, 1= Geçti
 
     # NOT: Supervised Learning'in en önemli özelliği ==>
     # X verileriyle birlikte y etiketlerinin bulunmasıdır(SL)
-
     y = np.array([
         0,
         0,
@@ -98,7 +98,7 @@ def main():
 
     # Modeli Eğitim
     # Model hem özellikleri hemde dorğu cevpları görsün
-    # Bu ilişkide çalışma saati + KAtılım oranı --> Geçti/Kaldı
+    # Bu ilişkide çalışma saati + Katılım oranı --> Geçti/Kaldı
     model.fit(x,y)
 
     # Instance
