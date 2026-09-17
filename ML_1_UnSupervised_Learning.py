@@ -106,8 +106,15 @@ def main():
             f"--> Cluster={cluster}"
         )
 
-
-
-
 if __name__== "__main__":
     main()
+
+"""
+2 tane feature var. (çalışma saati,  katılım oranı)
+z = b +w1*x1 + w2*x2
+
+3 tane feature (çalışma saati,  katılım oranı, sınav_notu)
+z= b +w1*x1 +w2*x2 +w3*x3
+
+z = b + W(wi*xi)
+"""
